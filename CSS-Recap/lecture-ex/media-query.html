@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media Queries Example</title>
+    <style>
+      /* Default Styles */
+      .box {
+        padding: 20px;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar main"
+          "footer footer";
+        grid-gap: 10px;
+      }
+
+      header {
+        grid-area: header;
+        background-color: lightcoral;
+      }
+
+      aside {
+        grid-area: sidebar;
+        background-color: lightgreen;
+      }
+
+      main {
+        grid-area: main;
+        background-color: lightblue;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: lightgray;
+      }
+
+      /* Media Queries */
+      @media (max-width: 600px) {
+        .container {
+          grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        }
+
+        aside,
+        main {
+          grid-area: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="box">Header</header>
+      <aside class="box">Sidebar</aside>
+      <main class="box">Main Content</main>
+      <footer class="box">Footer</footer>
+    </div>
+  </body>
+</html>
